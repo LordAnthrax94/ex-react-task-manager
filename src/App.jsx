@@ -1,0 +1,25 @@
+import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom'
+import TaskList from './pages/TaskList'
+import AddTask from './pages/AddTask'
+import Home from './pages/Home'
+
+function App() {
+  
+
+  return (
+    <BrowserRouter>
+      <nav className="NavBar">
+        <NavLink to="/" end className="pagina">Home</NavLink>
+        <NavLink to="/task" end className="pagina">Task List</NavLink>
+        <NavLink to="/add" className="pagina">Add Task</NavLink>
+      </nav>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/task" element={<TaskList />} />
+        <Route path="/add" element={<AddTask />} />        
+      </Routes>
+    </BrowserRouter>
+  )
+}
+
+export default App
