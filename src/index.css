@@ -24,3 +24,53 @@
     background-color: #333;
     color: #fff;    
 }
+
+.taskPage{
+  text-align: center;
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+  width:1200px
+}
+
+/* .taskPage h1,h2{
+  text-align: center;
+} */
+ .taskPage table {
+  border-collapse: collapse;  
+}
+
+.taskPage th{ 
+  background-color:lightsalmon;
+  padding: 10px;  
+}
+
+.taskPage th:first-child {
+  border-top-left-radius: 10px;
+}
+
+.taskPage th:last-child {
+  border-top-right-radius: 10px;
+}
+
+.taskPage td{  
+  border: white 1px solid;
+  padding: 10px;
+}
+
+.taskPage tr{  
+  background-color: rgba(255, 160, 122, 0.438);    
+}
+
+
+td.todo{
+  background-color: rgba(255, 0, 0, 0.459);
+}
+
+td.doing{
+  background-color: rgba(255, 255, 0, 0.541);
+}
+
+td.done{
+  background-color: rgba(0, 128, 11, 0.637);
+}

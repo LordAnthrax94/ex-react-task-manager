@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { GlobalContext } from "../context/GlobalContext";
+import TaskRow from "../components/taskrow";
 
 export default function TaskList() {
 
@@ -9,9 +10,22 @@ export default function TaskList() {
   
 
   return (
-    <div>
+    <div className="taskPage">
       <h1>Task List</h1>
-      <p>Pagina lista delle task.</p>      
+      <table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Status</th>
+            <th>Data Creazione</th>
+          </tr>
+        </thead>
+        <tbody>
+          {tasks.map(task => (
+            <TaskRow key={task.id} task={task} />
+          ))}
+        </tbody>
+      </table>     
     </div>
   );
 }
