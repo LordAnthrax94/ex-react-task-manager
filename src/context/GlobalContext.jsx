@@ -1,7 +1,7 @@
-import { createContext, useContext, useState, useEffect, use } from "react";
+import { createContext, useState, useEffect } from "react";
 
-const GlobalContext = createContext();
-const GlobalProvider = ({children}) =>{
+export const GlobalContext = createContext();
+export function GlobalProvider ({children}){
 
 const api_url = import.meta.env.VITE_API_URL;
 
@@ -9,8 +9,8 @@ const [tasks, setTasks] = useState([]);
 
 const fetchTasks = () =>{
   fetch(`${api_url}/tasks`)
-  .then((response) => response.json())
-  .then((data) => setTasks(data))
+  .then(res => res.json())
+  .then(data => setTasks(data))
   .catch((error) => console.error("Error fetching tasks:", error));    
 };
 
@@ -21,12 +21,8 @@ useEffect(() => {
       tasks,
       setTasks,
       fetchTasks,
-    };
-
-   console.log(tasks);
+    }; 
    
-    
-
   return (
         <GlobalContext.Provider value={value}>
             {children}
@@ -34,7 +30,6 @@ useEffect(() => {
     )
 }
 
-const useGlobalContext = () => useContext(GlobalContext)
 
-export { useGlobalContext, GlobalProvider }
+
 
