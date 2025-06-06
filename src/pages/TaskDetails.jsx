@@ -14,6 +14,11 @@ export default function TaskDetails() {
     return <h2>Task not found</h2>;
   }
 
+  function handleDelete() {
+    console.log("TASK ELIMINATA", task.id);
+    
+  }
+
   return (
     <div className="container">
       <div className="taskDettaglio">
@@ -21,7 +26,8 @@ export default function TaskDetails() {
           <p><strong>Nome Task:</strong>{task.title}</p>
           <p><strong>Descrizione:</strong> {task.description}</p>
           <p><strong>Status:</strong>{task.status}</p>
-          <p><strong>Creazione:</strong>: {new Date(task.createdAt).toLocaleDateString()}</p>        
+          <p><strong>Creazione:</strong>: {new Date(task.createdAt).toLocaleDateString()}</p> 
+          <button className="delButton" onClick={handleDelete}>Elimina task</button>       
       </div>
     </div>
     
