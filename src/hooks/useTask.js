@@ -27,8 +27,15 @@ export default function useTask(){
       setTasks(prev => [...prev, task]);
     }
 
-    const updateTask = () => {
-      ;      
+    const updateTask = async modifyTask => {
+      const response = await fetch(`${api_url}/tasks/${modifyTask.id}`, {
+        method: "PUT",
+        headers: {"content-Type": "application/json"},
+        body: JSON.stringify(modifyTask)
+      });
+      const { success, message, task } = await response.json()
+      if(!success) throw new Error(message);
+      setTasks(prev => prev.map(task => task.id === modifyTask.id ? modifyTask : task));      
     }
 
     const removeTask = async deleteTask => {
