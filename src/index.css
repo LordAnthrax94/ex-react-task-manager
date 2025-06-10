@@ -46,6 +46,11 @@
   padding: 10px;  
 }
 
+.taskPage th:hover{
+  background-color: #50ff5950;
+  cursor: pointer;
+}
+
 .taskPage th:first-child {
   border-top-left-radius: 10px;
 }
