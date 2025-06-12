@@ -255,3 +255,13 @@ td.done{
   background: rgb(135, 206, 235);
 }
 
+.searchInput{
+  width: 80%;
+  padding: 10px;
+  border: 1px solid #6764ff;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: rgb(251, 251, 252);
+  margin: 30px;
+}
+
